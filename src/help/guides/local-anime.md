@@ -15,7 +15,7 @@ Follow the steps below to create local anime.
     </ul>
 1. Place correctly structured anime inside `/Aniyomi/localanime/`.
 	<ul>
-  		<li>Optional: If adding anime in folders, add a file named `.nomedia` to the local folder so images do not show up in the gallery</li>
+  		<li>Optional: If you're adding anime in folders, add a file named `.nomedia` to the local folder so images do not show up in the gallery</li>
 	</ul>
 1. You can then access the anime in <Navigation item="browse"/> → **Local anime source**.
 
@@ -29,7 +29,7 @@ Remember to give the app storage permissions.
 
 ## Folder Structure
 
-Aniyomi requires a specific folder structure for local manga to be correctly processed. Local manga will be read from the `Aniyomi/localanime` folder. Each anime must have a `Anime` folder. Episode videos will then go into the anime folder. See below for more information on archive files. You can refer to the following example:
+Aniyomi requires a specific folder structure for local anime to be correctly processed. Local anime will be read from the `Aniyomi/localanime` folder. Each anime must have a `Anime` folder. Episode videos will then go into the anime folder. See below for more information on archive files. You can refer to the following example:
 
 ::: guide Example (Folder)
 <div class="side-by-side">
@@ -41,10 +41,10 @@ Aniyomi requires a specific folder structure for local manga to be correctly pro
 					<span class="ft-icon ft-folder">Anime title</span>
 					<ul>
 						<li>
-							<span class="ft-icon ft-image">ep1.mp4</span>
+							<span class="ft-icon ft-video">ep1.mp4</span>
 						</li>
 						<li>
-							<span class="ft-icon ft-image">ep2.mkv</span>
+							<span class="ft-icon ft-video">ep2.mkv</span>
 						</li>
 						<li>
 							<span class="ft-icon ft-image">cover.jpg</span>
@@ -63,10 +63,10 @@ Aniyomi requires a specific folder structure for local manga to be correctly pro
 					<span class="ft-icon ft-folder">Anime title</span>
 					<ul>
 						<li>
-							<span class="ft-icon ft-image">ep3.mp4</span>
+							<span class="ft-icon ft-video">ep3.mp4</span>
 						</li>
 						<li>
-							<span class="ft-icon ft-image">ep4.mkv</span>
+							<span class="ft-icon ft-video">ep4.mkv</span>
 						</li>
 					</ul>
 				</li>
@@ -83,8 +83,8 @@ The path to the folder with videos must contain both the anime title (as seen ab
 ::: guide-empty
 <figure class="centered">
 	<h4>Example structure using the file manager</h4>
-	<p>Here, the anime name is <strong>test</strong> so the file structure is <code>/Aniyomi/local/test/episodes</code>.</p>
-	<img class="zoomable" height="300" :src="$withBase('/assets/guides_local-manga.jpg')">
+	<p>Here, the anime name is <strong>test</strong> so the file structure is <code>/Aniyomi/localanime/test/episodes</code>.</p>
+	<img class="zoomable" height="300" :src="$withBase('/assets/guides_local-anime.jpg')">
 </figure>
 :::
 
@@ -105,14 +105,15 @@ You can copy the following example and edit the details as needed:
 	"description": "Example Description",
 	"genre": ["genre 1", "genre 2", "etc"],
 	"status": "0",
-	"_status values": ["0 = Unknown", "1 = Ongoing", "2 = Completed", "3 = Licensed"]
+	"_status values": ["0 = Unknown", "1 = Ongoing", "2 = Completed", "3 = Licensed", "4 = Publishing finished", "5 = Cancelled"]
 }
 ```
+If you don't want to manually create the `details.json` file for anime, you can alternatively use [this tool](https://aniyomi-local.netlify.app).
 
 ### Using a custom cover image
 
-It is also possible to use a custom image as a cover for each local manga.
+It is also possible to use a custom image as a cover for each local anime.
 
 To do this, you only need to place the image file, that needs to be named
-`cover.jpg`, in the root of the manga folder. The app will then use your
+`cover.jpg`, in the root of the anime folder. The app will then use your
 custom image in the local source listing.
